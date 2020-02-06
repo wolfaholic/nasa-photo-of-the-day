@@ -51,7 +51,8 @@ const Picture = () => {
                 <h2>
                     {title}
                 </h2>
-                <p>{date} {copyright}</p>
+                <p>Date: {date}</p> 
+                <p>Photo Provided by {copyright}</p>
                 <p>{explanation}</p>
             
             <img src={picture} alt= "NASA PIC of the Day" />
