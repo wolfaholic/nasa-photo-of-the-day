@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// import styled from "styled-components";
+
+// const container = styled.section`
+//         width: 90%;
+//         background-color: black;
+//         `;
 
 const Picture = () => {
     const [picture, setPicture] = useState("");
@@ -28,8 +34,11 @@ const Picture = () => {
         getImg();
     },[date]);
 
+
+
     return (
-        <div className = "container">
+
+        <section className="container">
             <div className = "topSection">
                 <h1 className = "mainHeader">
                     <img src="/assets/projectnasa_logo.png" alt= "project nasa logo"/>
@@ -44,9 +53,10 @@ const Picture = () => {
                 </h2>
                 <p>{date} {copyright}</p>
                 <p>{explanation}</p>
-            </div>
+            
             <img src={picture} alt= "NASA PIC of the Day" />
-        </div>
+            </div>
+        </section>
 
 
 
