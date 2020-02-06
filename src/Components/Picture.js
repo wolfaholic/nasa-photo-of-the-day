@@ -5,7 +5,8 @@ const Picture = () => {
     const [picture, setPicture] = useState("");
     const [date, setDate] = useState("");
     const [title, setTitle] = useState("");
-    const [explaination, setExplaination] = useState("");
+    const [explanation, setExplanation] = useState("");
+    const [copyright, setCopyright] = useState("");
 
     useEffect(() => {
         function getImg() {
@@ -14,22 +15,24 @@ const Picture = () => {
                     'https://api.nasa.gov/planetary/apod?api_key=pVMkN1DjKBHaNYvfFsKlnAnPNBeW7yyWrfo8FtNy'
                 )
                 .then(response => {
-                    /* console.log(response.data); */
+                    
                     setPicture(response.data.url);
                     setDate(response.data.date);
                     setTitle(response.data.title);
-                    setExplaination(response.data.explaination);
+                    setExplanation(response.data.explanation);
+                    setCopyright(response.data.copyright);
+                    console.log(response.data);
                 })
                 .catch (error => console.log(error));
         }
-
+        getImg();
     },[date]);
 
     return (
         <div className = "container">
             <div className = "topSection">
                 <h1 className = "mainHeader">
-                    Project NASA
+                    <img src="/assets/projectnasa_logo.png" alt= "project nasa logo"/>
                 </h1>
                 <h3 className = "subHeader">
                     Photograph of the Day
@@ -39,8 +42,8 @@ const Picture = () => {
                 <h2>
                     {title}
                 </h2>
-                <p>{date}</p>
-                <p>{explaination}</p>
+                <p>{date} {copyright}</p>
+                <p>{explanation}</p>
             </div>
             <img src={picture} alt= "NASA PIC of the Day" />
         </div>
