@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import styled from "styled-components";
+import {SubHeader} from "./advstyle"
+import {DailyImg} from "./advstyle"
 
-// const container = styled.section`
-//         width: 90%;
-//         background-color: black;
-//         `;
+
+
 
 const Picture = () => {
     const [picture, setPicture] = useState("");
@@ -43,19 +42,19 @@ const Picture = () => {
                 <h1 className = "mainHeader">
                     <img src="/assets/projectnasa_logo.png" alt= "project nasa logo"/>
                 </h1>
-                <h3 className = "subHeader">
+                <SubHeader>
                     Photograph of the Day
-                </h3>
+                </SubHeader>
             </div>
             <div className = "pictureCard">
                 <h2>
                     {title}
                 </h2>
                 <p>Date: {date}</p> 
-                <p>Photo Provided by {copyright}</p>
+                <p>Photo Provided by: {copyright}</p>
                 <p>{explanation}</p>
             
-            <img src={picture} alt= "NASA PIC of the Day" />
+            <DailyImg src={picture} alt= "NASA PIC of the Day" />
             </div>
         </section>
 
