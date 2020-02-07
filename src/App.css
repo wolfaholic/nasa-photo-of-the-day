@@ -23,6 +23,33 @@
   color: #61dafb;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #ececec; */
+  color: black;
+  width: 100%;
+  margin: 0;
+}
+
+.pictureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.pictureCard p {
+  
+  width: 60%;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
